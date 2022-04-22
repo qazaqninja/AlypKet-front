@@ -4,8 +4,10 @@ import 'package:alypket/detail_screen.dart';
 import 'package:alypket/drawer/create_post.dart';
 import 'package:alypket/drawer/my_posts.dart';
 import 'package:alypket/drawer/profile.dart';
+import 'package:alypket/login_screen.dart';
 import 'package:alypket/models/image_card.dart';
 import 'package:alypket/services/auth_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -13,7 +15,7 @@ import 'package:url_launcher/url_launcher.dart';
 // class HomeScreen extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
-    // final authService = Provider.of<AuthService>(context);
+// final authService = Provider.of<AuthService>(context);
 //     return Scaffold(
 //         body: Column(
 //       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -31,7 +33,6 @@ import 'package:url_launcher/url_launcher.dart';
 //   }
 // }
 
-
 class HomeScreen extends StatefulWidget {
   HomeScreen({
     Key? key,
@@ -41,8 +42,9 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => HomeScreenState();
 }
 
+ImageCards? imgcard;
+
 class HomeScreenState extends State<HomeScreen> {
-  
   final List<ImageCards> cards = [
     ImageCards(
       id: 'p1',
@@ -244,7 +246,7 @@ class HomeScreenState extends State<HomeScreen> {
                       'https://a-static.besthdwallpaper.com/anime-devochka-i-babochki-oboi-2048x1536-26669_26.jpg'),
                   radius: 50,
                 ),
-                Text("\n201689@gmail.com")
+                //Text("${imgcard!.email}")
               ]),
             ),
             decoration: BoxDecoration(
