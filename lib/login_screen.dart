@@ -13,7 +13,8 @@ class LoginScreen extends StatelessWidget {
     final authService = Provider.of<AuthService>(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text("Login")),
+      appBar: AppBar(title: Text("Login"),
+      backgroundColor: Color.fromARGB(255, 255, 24, 63),),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Padding(
           padding: const EdgeInsets.all(8),
@@ -29,10 +30,14 @@ class LoginScreen extends StatelessWidget {
             decoration: InputDecoration(labelText: "Password"),
           ),
         ),
-        ElevatedButton(onPressed: (){
+        ElevatedButton(
+          style: ButtonStyle(backgroundColor:  MaterialStateProperty.resolveWith((states) => Color.fromARGB(255, 255, 24, 63))),
+          onPressed: (){
           authService.signInWithEmailAndPassword(emailController.text, passwordController.text);
         }, child: Text("Login")),
-        ElevatedButton(onPressed: (){
+        ElevatedButton(
+          style: ButtonStyle(backgroundColor:  MaterialStateProperty.resolveWith((states) => Color.fromARGB(255, 255, 24, 63))),
+          onPressed: (){
           Navigator.pushNamed(context,"/register");
         }, child: Text("Register"))
       ]),

@@ -241,10 +241,10 @@ class HomeScreenState extends State<HomeScreen> {
               child: Column(children: [
                 CircleAvatar(
                   backgroundImage: NetworkImage(
-                      'https://a-static.besthdwallpaper.com/anime-devochka-i-babochki-oboi-2048x1536-26669_26.jpg'),
+                      'https://images.unsplash.com/profile-1589220274777-f30b37e96fe2image?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff'),
                   radius: 50,
                 ),
-                Text("\n201689@gmail.com")
+                Text("\na.kenzhebek1643@gmail.com")
               ]),
             ),
             decoration: BoxDecoration(
