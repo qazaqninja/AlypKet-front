@@ -18,7 +18,7 @@ class Profile extends StatelessWidget {
           'Profile',
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
         actions: [],

@@ -15,32 +15,156 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Login"),
       backgroundColor: Color.fromARGB(255, 255, 24, 63),),
-      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      body: 
+      Column(
+        
+        children: [
+        
         Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.only(left: 15, top: 8, bottom: 2),
+          child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Email",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                    ),
+                  )),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
           child: TextField(
             controller: emailController,
-            decoration: InputDecoration(labelText: "Email"),
+            // keyboardType: TextInputType.number,
+            style: const TextStyle(fontSize: 20),
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(13),
+              hintText: '',
+              enabledBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+                borderSide: BorderSide(
+                    color: Color.fromRGBO(169, 168, 168, 0.2), width: 0.0),
+              ),
+              border: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey, width: 0.0),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+              ),
+              disabledBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey, width: 0.0),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+              ),
+              hintStyle: const TextStyle(fontSize: 16.0, color: Colors.black),
+              filled: true,
+              fillColor: const Color.fromRGBO(169, 168, 168, 0.2),
+            ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.only(left: 15, top: 8, bottom: 2),
+          child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Password",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                    ),
+                  )),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
           child: TextField(
+            obscureText: true,
             controller: passwordController,
-            decoration: InputDecoration(labelText: "Password"),
+            // keyboardType: TextInputType.number,
+            style: const TextStyle(fontSize: 20),
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(13),
+              hintText: '',
+              enabledBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+                borderSide: BorderSide(
+                    color: Color.fromRGBO(169, 168, 168, 0.2), width: 0.0),
+              ),
+              border: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey, width: 0.0),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+              ),
+              disabledBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey, width: 0.0),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+              ),
+              hintStyle: const TextStyle(fontSize: 16.0, color: Colors.black),
+              filled: true,
+              fillColor: const Color.fromRGBO(169, 168, 168, 0.2),
+            ),
           ),
         ),
-        ElevatedButton(
-          style: ButtonStyle(backgroundColor:  MaterialStateProperty.resolveWith((states) => Color.fromARGB(255, 255, 24, 63))),
-          onPressed: (){
-          authService.signInWithEmailAndPassword(emailController.text, passwordController.text);
-        }, child: Text("Login")),
-        ElevatedButton(
-          style: ButtonStyle(backgroundColor:  MaterialStateProperty.resolveWith((states) => Color.fromARGB(255, 255, 24, 63))),
-          onPressed: (){
-          Navigator.pushNamed(context,"/register");
-        }, child: Text("Register"))
+        
+        Spacer(),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 12.0, right: 12, bottom: 10),
+            child: InkWell(
+              onTap: ()  {
+                    authService.signInWithEmailAndPassword(emailController.text, passwordController.text);
+                  },
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height:65,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 255, 24, 63),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
+                ),),
+                child: Center(
+                  child: Text("Login",
+                    style: TextStyle(fontSize: 20,color: Colors.white, fontWeight: FontWeight.w800),),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 12.0, right: 12, bottom: 30),
+            child: InkWell(
+              onTap: ()  {
+                    Navigator.pushNamed(context,"/register");
+                  },
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height:65,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 255, 24, 63),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
+                ),),
+                child: Center(
+                  child: Text("Register",
+                    style: TextStyle(fontSize: 20,color: Colors.white, fontWeight: FontWeight.w800),),
+                ),
+              ),
+            ),
+          ),
+        )
       ]),
+    
     );
   }
 }

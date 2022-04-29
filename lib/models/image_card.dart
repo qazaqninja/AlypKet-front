@@ -8,6 +8,8 @@ class ImageCards {
   final String contact;
   final String email;
   final String imageUrl;
+  final String whatsappUrl;
+
 
   ImageCards({
     required this.id,
@@ -19,5 +21,6 @@ class ImageCards {
     required this.contact,
     required this.email,
     required this.imageUrl,
+    required this.whatsappUrl,
   });
 }

@@ -46,16 +46,16 @@ class HomeScreenState extends State<HomeScreen> {
   final List<ImageCards> cards = [
     ImageCards(
       id: 'p1',
-      title: 'Beginning Flutter With Dart',
+      title: 'Macbook Pro',
       fromA: "California",
       toB: "New-York",
-      price: 10.0,
+      price: 2000,
       contact: "8776-627-27-54",
       email: "darmshtadtkd@gmail.com",
       description:
-          "Cghjkyj ye;yj fdjkfjdkfjskfjdslfsd hjdfdh jshfjds hdjshjdhsj hdjshdjshdajshdkasj hasjdhasjkdhasjkdhasjkdhajkshdasjdkhasjkdhasjkd",
+          "The Apple M1 chip gives the 13‑inch MacBook Pro speed and power beyond belief. With up to 2.8x CPU performance. Up to 5x the graphics speed. An advanced Neural Engine for up to 11x faster machine learning. And up to 20 hours of battery life so you can go all day. It’s our most popular pro notebook, taken to a whole new level.",
       imageUrl:
-          'https://opt-1102402.ssl.1c-bitrix-cdn.ru/upload/iblock/f0d/khotite_vernut_tovar_v_internet_magazin_1.jpg?1581065827116637',
+          'https://www.apple.com/v/macbook-pro-13/k/images/overview/hero_endframe__bsza6x4fldiq_large.jpg', whatsappUrl: 'https://wa.me/87080863309?text=${Uri.parse("hello")}',
     ),
     ImageCards(
       id: 'p2',
@@ -68,7 +68,8 @@ class HomeScreenState extends State<HomeScreen> {
       description:
           "Cghjkyj ye;yj fdjkfjdkfjskfjdslfsd hjdfdh jshfjds hdjshjdhsj hdjshdjshdajshdkasj hasjdhasjkdhasjkdhasjkdhajkshdasjdkhasjkdhasjkd",
       imageUrl:
-          'https://opt-1102402.ssl.1c-bitrix-cdn.ru/upload/iblock/f0d/khotite_vernut_tovar_v_internet_magazin_1.jpg?1581065827116637',
+          'https://opt-1102402.ssl.1c-bitrix-cdn.ru/upload/iblock/f0d/khotite_vernut_tovar_v_internet_magazin_1.jpg?1581065827116637', 
+      whatsappUrl: 'https://wa.me/87080863309?text=${Uri.parse("hello")}',
     ),
     ImageCards(
       id: 'p3',
@@ -81,7 +82,7 @@ class HomeScreenState extends State<HomeScreen> {
       description:
           "Cghjkyj ye;yj fdjkfjdkfjskfjdslfsd hjdfdh jshfjds hdjshjdhsj hdjshdjshdajshdkasj hasjdhasjkdhasjkdhasjkdhajkshdasjdkhasjkdhasjkd",
       imageUrl:
-          'https://opt-1102402.ssl.1c-bitrix-cdn.ru/upload/iblock/f0d/khotite_vernut_tovar_v_internet_magazin_1.jpg?1581065827116637',
+          'https://opt-1102402.ssl.1c-bitrix-cdn.ru/upload/iblock/f0d/khotite_vernut_tovar_v_internet_magazin_1.jpg?1581065827116637', whatsappUrl: 'https://wa.me/87080863309?text=${Uri.parse("hello")}',
     ),
     ImageCards(
       id: 'p4',
@@ -94,7 +95,7 @@ class HomeScreenState extends State<HomeScreen> {
       description:
           "Cghjkyj ye;yj fdjkfjdkfjskfjdslfsd hjdfdh jshfjds hdjshjdhsj hdjshdjshdajshdkasj hasjdhasjkdhasjkdhasjkdhajkshdasjdkhasjkdhasjkd",
       imageUrl:
-          'https://opt-1102402.ssl.1c-bitrix-cdn.ru/upload/iblock/f0d/khotite_vernut_tovar_v_internet_magazin_1.jpg?1581065827116637',
+          'https://opt-1102402.ssl.1c-bitrix-cdn.ru/upload/iblock/f0d/khotite_vernut_tovar_v_internet_magazin_1.jpg?1581065827116637', whatsappUrl: 'https://wa.me/87080863309?text=${Uri.parse("hello")}',
     ),
     ImageCards(
       id: 'p5',
@@ -108,6 +109,8 @@ class HomeScreenState extends State<HomeScreen> {
           "Cghjkyj ye;yj fdjkfjdkfjskfjdslfsd hjdfdh jshfjds hdjshjdhsj hdjshdjshdajshdkasj hasjdhasjkdhasjkdhasjkdhajkshdasjdkhasjkdhasjkd",
       imageUrl:
           'https://opt-1102402.ssl.1c-bitrix-cdn.ru/upload/iblock/f0d/khotite_vernut_tovar_v_internet_magazin_1.jpg?1581065827116637',
+          //  whatsappUrl: 'whatsapp://send?phone=87080863309&text=hello',
+          whatsappUrl: 'https://wa.me/87080863309?text=${Uri.parse("hello")}'
     )
   ];
 
@@ -169,19 +172,65 @@ class HomeScreenState extends State<HomeScreen> {
       body: Container(
         child: Column(
           children: [
-            Container(
-              height: 10,
-            ),
+            // Container(
+            //   height: 10,
+            // ),
             Expanded(
                 child: ListView.builder(
                     itemCount: cards.length,
                     itemBuilder: (BuildContext cnt, int i) {
                       return Container(
                         margin: EdgeInsets.all(10),
-                        height: 270,
+                        height: 350,
                         //width: 390,
                         child: Stack(
                           children: [
+                            
+                            Positioned(
+                              bottom: 0,
+                              child: Container(
+                                height: 150,
+                                width: MediaQuery.of(context).size.width * .955,
+                                decoration: BoxDecoration(
+
+                                color:Color.fromARGB(255, 255, 24, 63),
+                                  borderRadius: BorderRadius.circular(25),
+                                  
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(left: 20.0, bottom: 10),
+                                        child: Text(
+                                          
+                                          "${cards[i].title}",
+                                          // text
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(left: 20.0, bottom: 20),
+                                        child: Text(
+                                          "From ${cards[i].fromA} to ${cards[i].toB}",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                          // textAlign: TextAlign.left,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                             Positioned(
                               child: InkWell(
                                 onTap: () => Navigator.push(
@@ -201,32 +250,6 @@ class HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                             ),
-                            Positioned(
-                              bottom: 0,
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      "    ${cards[i].title}",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Text(
-                                      "    From ${cards[i].fromA} to ${cards[i].toB}",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                      // textAlign: TextAlign.left,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
                           ],
                         ),
                       );
