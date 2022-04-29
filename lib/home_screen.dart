@@ -157,9 +157,16 @@ class HomeScreenState extends State<HomeScreen> {
     // authService.signOut();
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.delivery_dining),
-        backgroundColor: Color.fromARGB(255, 255, 24, 63),
-      ),
+          leading: Icon(Icons.delivery_dining),
+          //backgroundColor: Color.fromARGB(255, 255, 24, 63),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[Colors.black, Colors.red]),
+            ),
+          )),
       // body: SingleChildScrollView(
       //     child: ListView.separated(
       //   itemCount: cards.length,
